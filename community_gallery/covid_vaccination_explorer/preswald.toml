@@ -1,0 +1,20 @@
+[project]
+title = "COVID-19 Vaccination Explorer"
+version = "0.1.0"
+port = 8501
+slug = "covid-vaccination-explorer"
+entrypoint = "hello.py"
+
+[branding]
+name = "COVID-19 Vaccination Explorer"
+logo = "images/logo.png"
+favicon = "images/favicon.ico"
+primaryColor = "#3366CC"
+
+[data.covid_vaccinations]
+type = "csv"
+path = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv"
+
+[logging]
+level = "INFO"
+format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
