@@ -29,15 +29,15 @@ This application uses the **Our World in Data COVID-19 Vaccination Dataset**, wh
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- Python 3.10 or higher
 - Preswald framework
 
 ### Installation
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/covid-vaccination-explorer.git
-   cd covid-vaccination-explorer
+   git clone https://github.com/shubhayan935/preswald.git
+   cd community_gallery/covid-vaccination-explorer
    ```
 
 2. Install Preswald if you haven't already:
@@ -63,35 +63,32 @@ This application uses the **Our World in Data COVID-19 Vaccination Dataset**, wh
 Run the application locally with:
 
 ```bash
-preswald run hello.py
+preswald run
 ```
 
 This will start the Preswald server and open the application in your default web browser (typically at http://localhost:8501).
 
-## 🌐 Deployment
+### **4. Deploy Your App to Structured Cloud**
 
-### Local Network Deployment
+Once your app is running locally, deploy it.
 
-To deploy the app so it's accessible on your local network:
-
-```bash
-preswald deploy hello.py --target local
-```
-
-### Cloud Deployment (Optional)
-
-To deploy to a cloud provider:
-
-1. Google Cloud Run:
-   ```bash
-   preswald deploy hello.py --target gcp
-   ```
-
-2. Structured Cloud (Preswald's managed service):
-   ```bash
-   preswald deploy hello.py --target structured
-   ```
-
+1. **Get an API key**
+    
+    - Go to [app.preswald.com](https://app.preswald.com/)
+    - Create a New Organization (top left corner)
+    - Navigate to **Settings > API Keys**
+    - Generate and copy your **Preswald API key**
+      
+2. **Deploy your app using the following command:**
+    ```
+    preswald deploy --target structured --github <your-github-username> --api-key <structured-api-key> hello.py
+    ```
+    Replace `<your-github-username>` and `<structured-api-key>` with your credentials. (Note: your github username must be all lowercase)
+    
+3. **Verify the deployment**
+    
+    - Once deployment is complete, a **live preview link** will be provided.
+    - Open the link in your browser and verify that your app is running.
 ## 📝 Usage Guide
 
 1. **Global Map**: The main map shows worldwide vaccination rates. Select different metrics using the dropdown above the map.
